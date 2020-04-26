@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import ColorInput from '../components/ColorInput';
 
 import { MonoText } from '../components/StyledText';
 
@@ -19,17 +20,9 @@ export default function HomeScreen() {
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
 
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
+        <ColorInput/>
+
 
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />

@@ -1,5 +1,5 @@
 import React from 'react';
-c
+import {Text} from 'react-native';
 
 export function MonoText(props) {
   return (
