@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from 'react-native-web';
-import TextInput from 'react-native-web/dist/exports/TextInput';
+import { TextInput, Headline } from 'react-native-paper';
 
 const ColorInput = () => {
   const initialColor  = 'red';
   const [color, setColor] = useState(initialColor);
 
   return <View style={Styles.container}>
-    <Text>Input your initial color</Text>
+    <Headline>Input your initial color</Headline>
     <TextInput
-      style={Styles.input}
+      mode="outlined"
       onChangeText={color => setColor(color)}
       value={color}
       placeholder="red"
@@ -26,6 +25,7 @@ const Styles  = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   colorBox:{
     width: '80%',
@@ -33,11 +33,6 @@ const Styles  = StyleSheet.create({
     flex: 0.2,
     border: '1px solid black',
   },
-  input: {
-    border: 'solid black',
-    height: 20,
-    borderWidth: StyleSheet.hairlineWidth
-  }
 
 })
 
