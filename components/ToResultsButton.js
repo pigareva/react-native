@@ -10,7 +10,7 @@ const ToResultsButton = () => (
 
 const styles = StyleSheet.create({
   button: {
-    margin: '1rem',
+    margin: 20,
   }
 });
 

@@ -3,30 +3,35 @@ import { View, StyleSheet } from 'react-native';
 import { TextInput, Headline } from 'react-native-paper';
 
 const ViewComponent = ({color, onChangeTextHandler}) =>
-  <View style={Styles.container}>
-    <Headline>Input your initial color</Headline>
+  <View style={styles.container}>
+    <Headline style={styles.headline}>Input your initial color</Headline>
     <TextInput
+      style={styles.input}
       mode="outlined"
       onChangeText={onChangeTextHandler}
       value={color}
       placeholder="red"
     />
-    <View style={[Styles.colorBox, {backgroundColor: color}]}/>
+    <View style={[styles.colorBox, {backgroundColor: color}]}/>
   </View>
 
-const Styles  = StyleSheet.create({
+const styles  = StyleSheet.create({
   container: {
     width: '100%',
     height: 200,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    marginBottom: 20,
+    marginTop: 50,
+  },
+  headline: {
+    textAlign: 'center',
+  },
+  input: {
+    margin: 20,
   },
   colorBox:{
-    width: 195,
     height: 66,
     borderRadius: 4,
+    margin: 20,
   },
 })
 
