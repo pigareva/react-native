@@ -5,11 +5,13 @@ import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
+import { MyContext, UseContext } from './contextManager';
 
 import AppNavigator from './navigation/AppNavigator';
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
+  const currentContext = UseContext();
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
@@ -22,10 +24,12 @@ export default function App(props) {
   } else {
     return (
       <PaperProvider>
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator />
-        </View>
+        <MyContext.Provider value={currentContext}>
+          <View style={styles.container}>
+            {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+            <AppNavigator />
+          </View>
+        </MyContext.Provider>
       </PaperProvider>
     );
   }

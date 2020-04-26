@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { MyContext } from '../../contextManager';
 import ViewComponent from './view';
 
 const ColorInput = () => {
-  const initialColor  = 'red';
-  const [color, setColor] = useState(initialColor);
+  const { color, setColor } = useContext(MyContext);
   const colorChangeHandler = color => setColor(color)
 
   return <ViewComponent

@@ -26,7 +26,6 @@ const Styles  = StyleSheet.create({
   colorBox:{
     width: 195,
     height: 66,
-    border: '1px solid black',
     borderRadius: 4,
   },
 })
