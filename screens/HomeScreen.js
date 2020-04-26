@@ -9,42 +9,23 @@ import {
   View,
 } from 'react-native';
 import ColorInput from '../components/ColorInput';
-
+import ToResultsButton from '../components/ToResultsButton';
 import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <ScrollView
+      <View
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
 
         <ColorInput/>
+        <ToResultsButton/>
 
+      </View>
+      <ScrollView>
 
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Get started by opening</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.
-          </Text>
-        </View>
-
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
-            </Text>
-          </TouchableOpacity>
-        </View>
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
