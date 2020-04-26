@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { TextInput, Headline } from 'react-native-paper';
 
-const ColorInput = () => {
-  const initialColor  = 'red';
-  const [color, setColor] = useState(initialColor);
-
-  return <View style={Styles.container}>
+const ViewComponent = ({color, onChangeTextHandler}) =>
+  <View style={Styles.container}>
     <Headline>Input your initial color</Headline>
     <TextInput
       mode="outlined"
-      onChangeText={color => setColor(color)}
+      onChangeText={onChangeTextHandler}
       value={color}
       placeholder="red"
     />
     <View style={[Styles.colorBox, {backgroundColor: color}]}/>
   </View>
-}
 
 const Styles  = StyleSheet.create({
   container: {
@@ -28,12 +24,11 @@ const Styles  = StyleSheet.create({
     alignItems: 'center',
   },
   colorBox:{
-    width: '80%',
-    height: 20,
-    flex: 0.2,
+    width: 195,
+    height: 66,
     border: '1px solid black',
+    borderRadius: 4,
   },
-
 })
 
-export default ColorInput;
+export default ViewComponent;
